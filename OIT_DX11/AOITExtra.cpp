@@ -128,8 +128,7 @@ void MySample::RegisterUI()
 		NumItems += 2;
 	}
 
-
-	static int RenterOption = 0;
+	static int RenterOption = ROV_OIT;
 	ImGui::Combo("Type", (int*)&RenterOption, items, NumItems);   // Combo using proper array. You can also pass a callback to retrieve array value, no need to create/copy an array just for that.
 
 	mpRenderType = itemsenums[RenterOption];

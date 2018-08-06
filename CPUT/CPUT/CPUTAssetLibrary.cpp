@@ -405,7 +405,7 @@ void CPUTAssetLibrary::AddAsset(
     {
 #ifdef UNICODE
         if ( ((0 == _wcsicmp( pCur->name.data(), name.data() )) && (pCur->pModel == pModel) && (pCur->meshIndex == meshIndex) ) ) {
-            DEBUG_PRINT(_L("WARNING: Adding asset with duplicate name: %s"), name.c_str());
+            //DEBUG_PRINT(_L("WARNING: Adding asset with duplicate name: %s"), name.c_str());
         }
 #endif
         // Assert that we haven't added one with this name

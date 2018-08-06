@@ -264,8 +264,7 @@ HRESULT AOITTechnique::OnCreate(ID3D11Device* pD3DDevice, int width, int height,
 		shaderpath += POST_PROCESS_HLSL;
 
         {
-		    hr = D3DCompileFromFile(shaderpath.c_str(), (D3D_SHADER_MACRO*)pFinalShaderMacros, D3D_COMPILE_STANDARD_FILE_INCLUDE,  "AOITSPResolvePS", "ps_5_0", 
-			    NULL, NULL, &pShaderBlob, &pErrorBlob);
+		    hr = D3DCompileFromFile(shaderpath.c_str(), (D3D_SHADER_MACRO*)pFinalShaderMacros, D3D_COMPILE_STANDARD_FILE_INCLUDE,  "AOITSPResolvePS", "ps_5_0", D3DCOMPILE_DEBUG| D3DCOMPILE_SKIP_OPTIMIZATION, NULL, &pShaderBlob, &pErrorBlob);
 		    if(!SUCCEEDED(hr)) 
 		    {
 			    cString msg = s2ws((char*)pErrorBlob->GetBufferPointer());
